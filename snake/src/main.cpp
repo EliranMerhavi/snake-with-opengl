@@ -60,7 +60,6 @@ void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, in
 	lock_input = true;
 }
 
-
 int main()
 {
 	srand(time(0));
@@ -71,6 +70,8 @@ int main()
 		system("pause");
 		return -1;
 	}
+
+	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 	window = glfwCreateWindow(WIDTH, HEIGHT, "snake game", nullptr, nullptr);
 
 	if (!window)
@@ -91,6 +92,7 @@ int main()
 		system("pause");
 		return -1;
 	}
+	
 
 	renderer::init();
 
